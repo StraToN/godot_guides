@@ -315,7 +315,9 @@ var score
 func _ready():
     $Player.connect("hit", self, "game_over")
 ```
-We're connecting the player's `hit` signal to our `game_over` function, which will handle what needs to happen when a game ends. We will also have a `new_game` function to set everything up for a new game:
+We're connecting the player's `hit` signal to our `game_over` function, which will handle what needs to happen when a game ends. Note: We could have done this by selecting the `Player` node in the scene tree and clicking on the `hit()` function, then click on "Connect..." in the "Node" tab next to the Inspector as we did before. In the "Connecting Signal" window that opens, we would have selected the `Main` node and typed "game_over" as the method to call. If the `game_over()` function doesn't exist in the `Main` node script, the "Make Function" toggle ensures it will be created for us. This line of code using `connect` is equivalent.
+
+We will also have a `new_game` function to set everything up for a new game:
 
 ```
 func new_game():
